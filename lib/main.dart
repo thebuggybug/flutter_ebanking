@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_banking/pages/homepage.dart';
+import 'package:mobile_banking/pages/login_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,7 +12,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
       debugShowCheckedModeBanner: false,
       // home: Homepage(),
       home: Scaffold(
@@ -25,11 +25,12 @@ class MyApp extends StatelessWidget {
               "lib/assets/images/ebl_logo.png",
               fit: BoxFit.cover,
               width: 130,
-
             ),
           ),
         ),
-        body: Homepage(),
+        body: SingleChildScrollView(
+          child: LoginPage(),
+        ),
       ),
     );
   }

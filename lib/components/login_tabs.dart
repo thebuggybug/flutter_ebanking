@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mobile_banking/pages/homepage.dart';
 
 class LoginTabs extends StatefulWidget {
   const LoginTabs({Key? key}) : super(key: key);
@@ -89,7 +90,11 @@ class _LoginTabsState extends State<LoginTabs> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return Homepage();
+                }));
+              },
               child: Text(
                 "Login",
                 style:

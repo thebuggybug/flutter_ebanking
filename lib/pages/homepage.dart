@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_banking/components/homepage_account_details_card.dart';
+import 'package:mobile_banking/components/homepage_top_bar.dart';
 import 'package:mobile_banking/pages/login_page.dart';
 
 class Homepage extends StatelessWidget {
@@ -6,12 +8,26 @@ class Homepage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Container(
-        // color: Colors.grey.shade300,
+    return Scaffold(
+      backgroundColor: Colors.grey.shade300,
+      body: SafeArea(
         child: Column(
           children: [
-            LoginPage(),
+            // Top Bar
+            HomepageTopBar(),
+            SizedBox(
+              height: 30,
+            ),
+            Container(
+              height: 200,
+              child: PageView(
+                children: [
+                  HomepageAccountDetailsCard(),
+                  HomepageAccountDetailsCard(),
+                  HomepageAccountDetailsCard(),
+                ],
+              ),
+            ),
           ],
         ),
       ),
