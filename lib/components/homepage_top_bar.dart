@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_banking/main.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomepageTopBar extends StatelessWidget {
   const HomepageTopBar({Key? key}) : super(key: key);
@@ -20,7 +22,11 @@ class HomepageTopBar extends StatelessWidget {
               SizedBox(
                 width: 10,
               ),
-              Text("My Home"),
+              Text(
+                "My Home",
+                style:
+                    GoogleFonts.lato(fontSize: 20, fontWeight: FontWeight.w900),
+              ),
             ],
           ),
           Row(
@@ -34,10 +40,64 @@ class HomepageTopBar extends StatelessWidget {
               SizedBox(
                 width: 18,
               ),
-              Image.asset(
-                "lib/assets/icons/exit.png",
-                color: Colors.red.shade900,
-                width: 25,
+              GestureDetector(
+                onTap: () {
+                  showDialog<String>(
+                    context: context,
+                    builder: (BuildContext context) => AlertDialog(
+                      title: Center(
+                        child: Text(
+                          'Asia World Bank',
+                          style: GoogleFonts.lato(
+                              fontSize: 24, fontWeight: FontWeight.w800),
+                        ),
+                      ),
+                      content: Container(
+                        alignment: Alignment.center,
+                        height: 18,
+                        child: Text(
+                          'Are you sure to logout ?',
+                          style: GoogleFonts.lato(
+                              fontSize: 18, fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                      actions: <Widget>[
+                        Row(
+                          children: [
+                            TextButton(
+                              onPressed: () => Navigator.pop(context, 'Cancel'),
+                              child: Text(
+                                'Cancel',
+                                style: GoogleFonts.lato(
+                                    fontSize: 16, fontWeight: FontWeight.w600),
+                              ),
+                            ),
+                            TextButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const MyApp()),
+                                );
+                              },
+                              child: Text(
+                                'Logout',
+                                style: GoogleFonts.lato(
+                                    fontSize: 16, fontWeight: FontWeight.w600),
+                              ),
+                            ),
+                          ],
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        )
+                      ],
+                    ),
+                  );
+                },
+                child: Image.asset(
+                  "lib/assets/icons/exit.png",
+                  color: Colors.red.shade900,
+                  width: 25,
+                ),
               ),
               SizedBox(
                 width: 18,

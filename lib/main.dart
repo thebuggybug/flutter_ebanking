@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_banking/components/custom_bottom_nav.dart';
 import 'package:mobile_banking/pages/homepage.dart';
 import 'package:mobile_banking/pages/login_page.dart';
+import 'package:circle_nav_bar/circle_nav_bar.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,6 +18,7 @@ class MyApp extends StatelessWidget {
       // home: Homepage(),
       home: Scaffold(
         backgroundColor: Colors.grey.shade300,
+        bottomNavigationBar: CustomBottomNav(),
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(60.0), // here the desired height
           child: AppBar(

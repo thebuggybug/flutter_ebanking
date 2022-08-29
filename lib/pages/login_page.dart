@@ -12,8 +12,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  // bool? isChecked = false;
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -25,6 +23,7 @@ class _LoginPageState extends State<LoginPage> {
             // crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               LoginTabs(),
+              // Quick Pay Tabs
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(4),
@@ -72,6 +71,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               SizedBox(height: 40),
+              // Connect Us Tab
               Container(
                 margin: EdgeInsets.only(bottom: 100),
                 child: Column(

@@ -4,9 +4,11 @@ class QuickPayIconsUtils extends StatelessWidget {
   final String iconPath;
   final String iconName;
 
-  const QuickPayIconsUtils(
-      {Key? key, required this.iconName, required this.iconPath})
-      : super(key: key);
+  const QuickPayIconsUtils({
+    Key? key,
+    required this.iconName,
+    required this.iconPath,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,6 @@ class QuickPayIconsUtils extends StatelessWidget {
               iconPath,
               // width: 50,
               color: Colors.red.shade900,
-
             ),
           ),
           SizedBox(

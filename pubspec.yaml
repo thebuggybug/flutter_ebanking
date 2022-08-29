@@ -32,6 +32,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   carousel_slider:
   google_fonts:
+  smooth_page_indicator:
+  curved_nav_bar:
+  circle_nav_bar:
 
 dev_dependencies:
   flutter_test:
@@ -54,8 +57,8 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-     - lib/assets/images/
-     - lib/assets/icons/
+    - lib/assets/images/
+    - lib/assets/icons/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
