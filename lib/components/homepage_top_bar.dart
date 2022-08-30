@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_banking/main.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mobile_banking/pages/accounts_page.dart';
 
 class HomepageTopBar extends StatelessWidget {
   const HomepageTopBar({Key? key}) : super(key: key);
@@ -16,17 +17,30 @@ class HomepageTopBar extends StatelessWidget {
           Row(
             children: [
               Image.asset(
-                "lib/assets/images/ebl.png",
+                "lib/assets/images/logo.png",
                 width: 40,
               ),
               SizedBox(
-                width: 10,
+                width: 12,
               ),
-              Text(
-                "My Home",
-                style:
-                    GoogleFonts.lato(fontSize: 20, fontWeight: FontWeight.w900),
-              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Good Morning !",
+                    style: GoogleFonts.lato(
+                        fontSize: 16, fontWeight: FontWeight.w900),
+                  ),
+                  SizedBox(
+                    height: 2,
+                  ),
+                  Text(
+                    "Rohan Manandhar",
+                    style: GoogleFonts.lato(
+                        fontSize: 22, fontWeight: FontWeight.w400),
+                  ),
+                ],
+              )
             ],
           ),
           Row(
@@ -34,7 +48,7 @@ class HomepageTopBar extends StatelessWidget {
             children: [
               Image.asset(
                 "lib/assets/icons/notification.png",
-                color: Colors.red.shade900,
+                color: Colors.deepPurpleAccent.shade400,
                 width: 25,
               ),
               SizedBox(
@@ -95,18 +109,27 @@ class HomepageTopBar extends StatelessWidget {
                 },
                 child: Image.asset(
                   "lib/assets/icons/exit.png",
-                  color: Colors.red.shade900,
+                  color: Colors.deepPurpleAccent.shade100,
                   width: 25,
                 ),
               ),
               SizedBox(
                 width: 18,
               ),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(50),
-                child: Image.asset(
-                  "lib/assets/images/pp.jpg",
-                  width: 40,
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const AccountsPage()),
+                  );
+                },
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(50),
+                  child: Image.asset(
+                    "lib/assets/images/pp.jpg",
+                    width: 40,
+                  ),
                 ),
               )
             ],

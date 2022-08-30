@@ -17,9 +17,9 @@ class _CarouselState extends State<Carousel> {
     return Container(
       child: CarouselSlider(
         items: [
-          Image.asset("lib/assets/images/everest.jpg"),
-          Image.asset("lib/assets/images/machapuchare.jpg"),
-          Image.asset("lib/assets/images/dhaulagiri.png"),
+          Image.asset("lib/assets/images/3.png"),
+          Image.asset("lib/assets/images/1.png"),
+          Image.asset("lib/assets/images/2.png"),
         ],
 
         carouselController: _controller,
@@ -31,7 +31,7 @@ class _CarouselState extends State<Carousel> {
           enableInfiniteScroll: true,
           initialPage: 3,
           autoPlay: true,
-          autoPlayInterval: Duration(seconds: 2),
+          autoPlayInterval: Duration(seconds: 4),
           autoPlayAnimationDuration: Duration(milliseconds: 800),
         ),
       ),

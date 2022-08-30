@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mobile_banking/components/local_auth_api.dart';
 import 'package:mobile_banking/pages/homepage.dart';
+import 'package:flutter/services.dart';
+import 'package:local_auth/local_auth.dart';
 
 class LoginTabs extends StatefulWidget {
   const LoginTabs({Key? key}) : super(key: key);
@@ -11,6 +14,23 @@ class LoginTabs extends StatefulWidget {
 
 class _LoginTabsState extends State<LoginTabs> {
   bool? isChecked = false;
+
+  // final LocalAuthentication auth = LocalAuthentication();
+  //
+  // Future<void> _authenticate() async {
+  //   bool authenticated = false;
+  //   try {
+  //     authenticated = await auth.authenticate(
+  //         localizedReason:
+  //             'Use your Fingerprint to Login into the Asia World Bank.',
+  //         useErrorDialogs: true,
+  //         stickyAuth: true);
+  //   } on PlatformException catch (e) {
+  //     print(e);
+  //     return;
+  //   }
+  //   if (!mounted) return;
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +89,7 @@ class _LoginTabsState extends State<LoginTabs> {
             Checkbox(
                 materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                 value: isChecked,
-                activeColor: Colors.red.shade900,
+                activeColor: Colors.deepPurpleAccent.shade400,
                 onChanged: (newBool) {
                   setState(() {
                     isChecked = newBool;
@@ -95,22 +115,31 @@ class _LoginTabsState extends State<LoginTabs> {
                   return Homepage();
                 }));
               },
+
               child: Text(
                 "Login",
                 style:
                     GoogleFonts.lato(fontSize: 20, fontWeight: FontWeight.w600),
               ),
               style: ElevatedButton.styleFrom(
-                  primary: Colors.red.shade900, fixedSize: Size(320, 50)),
+                  primary: Colors.deepPurpleAccent.shade400, fixedSize: Size(320, 50)),
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () async {
+                // _authenticate();
+                final isAuthenticated = await LocalAuthApi.authenticate();
+                if (isAuthenticated) {
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: (context) => Homepage()),
+                  );
+                }
+              },
               child: Icon(
                 Icons.fingerprint_outlined,
                 size: 28,
               ),
               style: ElevatedButton.styleFrom(
-                  primary: Colors.red.shade900, fixedSize: Size(90, 50)),
+                  primary: Colors.deepPurpleAccent.shade400, fixedSize: Size(90, 50)),
             )
           ],
         ),

@@ -22,12 +22,13 @@ class MyApp extends StatelessWidget {
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(60.0), // here the desired height
           child: AppBar(
-            backgroundColor: Colors.red.shade900,
+            backgroundColor: Colors.deepPurpleAccent.shade400,
             centerTitle: true,
             title: Image.asset(
-              "lib/assets/images/ebl_logo.png",
-              fit: BoxFit.cover,
-              width: 130,
+              "lib/assets/images/logo_name.png",
+              // fit: BoxFit.cover,
+              // height: 100,
+              width: 250,
             ),
           ),
         ),

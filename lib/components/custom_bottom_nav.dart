@@ -9,15 +9,15 @@ class CustomBottomNav extends StatelessWidget {
     return Container(
       child: CircleNavBar(
         activeIcons: const [
-          Icon(Icons.home, color: Colors.red),
-          Icon(Icons.payments_outlined, color: Colors.red),
+          Icon(Icons.home, color: Colors.deepPurple),
+          Icon(Icons.payments_outlined, color: Colors.deepPurple),
           Icon(
             Icons.qr_code_scanner,
-            color: Colors.red,
+            color: Colors.deepPurple,
             size: 40,
           ),
-          Icon(Icons.map_outlined, color: Colors.red),
-          Icon(Icons.list, color: Colors.red),
+          Icon(Icons.map_outlined, color: Colors.deepPurple),
+          Icon(Icons.list, color: Colors.deepPurple),
         ],
 
         //

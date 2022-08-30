@@ -35,6 +35,10 @@ dependencies:
   smooth_page_indicator:
   curved_nav_bar:
   circle_nav_bar:
+  local_auth: ^1.1.8
+  lottie:
+  syncfusion_flutter_charts:
+
 
 dev_dependencies:
   flutter_test:

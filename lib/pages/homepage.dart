@@ -14,15 +14,27 @@ class Homepage extends StatelessWidget {
       backgroundColor: Colors.grey.shade300,
       bottomNavigationBar: CircleNavBar(
         activeIcons: const [
-          Icon(Icons.home, color: Colors.red),
-          Icon(Icons.account_circle, color: Colors.red),
+          Icon(
+            Icons.home,
+            color: Colors.deepPurple,
+          ),
+          Icon(
+            Icons.account_circle,
+            color: Colors.deepPurple,
+          ),
           Icon(
             Icons.qr_code_scanner,
-            color: Colors.red,
+            color: Colors.deepPurple,
             size: 40,
           ),
-          Icon(Icons.more_horiz_outlined, color: Colors.red),
-          Icon(Icons.list, color: Colors.red),
+          Icon(
+            Icons.more_horiz_outlined,
+            color: Colors.deepPurple,
+          ),
+          Icon(
+            Icons.list,
+            color: Colors.deepPurple,
+          ),
         ],
         inactiveIcons: const [
           Icon(Icons.home, color: Colors.black),
@@ -59,10 +71,10 @@ class Homepage extends StatelessWidget {
                 SizedBox(height: 30),
                 HomepageAccountDetailsCard(),
                 SizedBox(height: 30),
-                HomepageQuickPay(),
+                RecentTransactions(),
                 SizedBox(height: 30),
+                HomepageQuickPay(),
 
-                RecentTransactions()
               ],
             ),
           ),

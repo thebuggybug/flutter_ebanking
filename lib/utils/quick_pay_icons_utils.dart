@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class QuickPayIconsUtils extends StatelessWidget {
   final String iconPath;
@@ -14,7 +15,7 @@ class QuickPayIconsUtils extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        // mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
             height: 72,
@@ -27,13 +28,16 @@ class QuickPayIconsUtils extends StatelessWidget {
             child: Image.asset(
               iconPath,
               // width: 50,
-              color: Colors.red.shade900,
+              color: Colors.deepPurpleAccent.shade100,
             ),
           ),
           SizedBox(
             height: 4,
           ),
-          Text(iconName)
+          Text(iconName, style: GoogleFonts.lato(
+            fontWeight: FontWeight.w600,
+            fontSize: 14,
+          ))
         ],
       ),
     );

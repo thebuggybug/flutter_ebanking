@@ -9,6 +9,7 @@ class AccountDetailsCardUtils extends StatelessWidget {
   final String accountBalance;
   final String accountInterest;
   final cardColor;
+  final textColor;
 
   const AccountDetailsCardUtils({
     Key? key,
@@ -19,6 +20,7 @@ class AccountDetailsCardUtils extends StatelessWidget {
     required this.accountBalance,
     required this.accountInterest,
     required this.cardColor,
+    required this.textColor,
   }) : super(key: key);
 
   @override
@@ -40,7 +42,7 @@ class AccountDetailsCardUtils extends StatelessWidget {
             children: [
               Text(
                 typeOfAccount.toUpperCase(),
-                style: GoogleFonts.lato(fontSize: 22),
+                style: GoogleFonts.lato(fontSize: 22, color: textColor),
               ),
               Container(
                 decoration: BoxDecoration(
@@ -53,7 +55,7 @@ class AccountDetailsCardUtils extends StatelessWidget {
                 child: Text(
                   accountStatus,
                   style: GoogleFonts.lato(
-                      fontSize: 20, fontWeight: FontWeight.w800),
+                      fontSize: 18, fontWeight: FontWeight.w900),
                 ),
               )
             ],
@@ -67,15 +69,19 @@ class AccountDetailsCardUtils extends StatelessWidget {
               SizedBox(
                 width: 6,
               ),
-              Icon(Icons.wallet),
+              Icon(
+                Icons.wallet,
+                color: textColor,
+              ),
               SizedBox(
                 width: 12,
               ),
               Text(
                 accountNumber,
                 style: GoogleFonts.lato(
-                  fontSize: 22,
-                ),
+                    fontSize: 22,
+                    color: textColor,
+                    fontWeight: FontWeight.w600),
               ),
             ],
           ),
@@ -86,13 +92,18 @@ class AccountDetailsCardUtils extends StatelessWidget {
             children: [
               Text(
                 accountBalance,
-                style:
-                    GoogleFonts.lato(fontSize: 24, fontWeight: FontWeight.w900),
+                style: GoogleFonts.lato(
+                    fontSize: 24,
+                    fontWeight: FontWeight.w900,
+                    color: textColor),
               ),
               SizedBox(
                 width: 16,
               ),
-              Icon(Icons.visibility_off),
+              Icon(
+                Icons.visibility_off,
+                color: textColor,
+              ),
             ],
           ),
           SizedBox(
@@ -102,8 +113,8 @@ class AccountDetailsCardUtils extends StatelessWidget {
             alignment: Alignment.bottomLeft,
             child: Text(
               accountName.toUpperCase(),
-              style:
-                  GoogleFonts.lato(fontSize: 20, fontWeight: FontWeight.w600),
+              style: GoogleFonts.lato(
+                  fontSize: 20, fontWeight: FontWeight.w600, color: textColor),
             ),
           ),
           SizedBox(
@@ -118,7 +129,9 @@ class AccountDetailsCardUtils extends StatelessWidget {
                   Text(
                     "Actual Balance",
                     style: GoogleFonts.lato(
-                        fontSize: 18, fontWeight: FontWeight.w500),
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        color: textColor),
                   ),
                   SizedBox(
                     height: 4,
@@ -126,7 +139,9 @@ class AccountDetailsCardUtils extends StatelessWidget {
                   Text(
                     accountBalance,
                     style: GoogleFonts.lato(
-                        fontSize: 14, fontWeight: FontWeight.w600),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                        color: textColor),
                   ),
                 ],
               ),
@@ -136,7 +151,9 @@ class AccountDetailsCardUtils extends StatelessWidget {
                   Text(
                     "Acquired Interest",
                     style: GoogleFonts.lato(
-                        fontSize: 18, fontWeight: FontWeight.w500),
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        color: textColor),
                   ),
                   SizedBox(
                     height: 4,
@@ -144,7 +161,9 @@ class AccountDetailsCardUtils extends StatelessWidget {
                   Text(
                     accountInterest,
                     style: GoogleFonts.lato(
-                        fontSize: 14, fontWeight: FontWeight.w600),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                        color: textColor),
                   ),
                 ],
               )
